@@ -69,6 +69,10 @@ ai-ops-starter/
 
 This is a seed, not a dependency. Fork it, gut what you don't need, grow it in your direction.
 
+## Contributing
+
+The structure of an AI ops system is still being figured out. If you've found a hook pattern, LaunchAgent approach, CLAUDE.md hierarchy, or folder structure that works better than what's here -- open an issue or a PR. The starter kit should reflect what's actually working in production, not a snapshot from when it was first built.
+
 ---
 
 MIT -- see [LICENSE](LICENSE)
