@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  LaunchAgent template: daily-digest
+  Runs a Python script once per day at a configurable time.
+
+  SETUP:
+  1. Replace all [YOUR_...] placeholders with your actual paths
+  2. Save as ~/Library/LaunchAgents/com.[yourname].daily-digest.plist
+  3. Load: launchctl load ~/Library/LaunchAgents/com.[yourname].daily-digest.plist
+  4. Test: launchctl start com.[yourname].daily-digest
+  5. Verify: check the log files specified in StandardOutPath/StandardErrorPath
+
+  PLACEHOLDERS:
+  - [YOUR_LABEL]    e.g., com.jane.daily-digest
+  - [YOUR_HOME]     e.g., /Users/jane
+  - [YOUR_VENV]     e.g., /Users/jane/.local/venvs/my-project (or /usr/bin for system Python)
+  - [YOUR_SCRIPT]   e.g., /Users/jane/scripts/daily-digest.py
+  - [YOUR_HOUR]     e.g., 8 (24-hour format, 0-23)
+  - [YOUR_MINUTE]   e.g., 0
+-->
+<plist version="1.0">
+<dict>
+
+  <!-- Label: unique identifier for this agent. Must match the filename (minus .plist). -->
+  <key>Label</key>
+  <string>[YOUR_LABEL]</string>
+
+  <!-- ProgramArguments: the command to run. Each argument is a separate string.
+       Using the venv's Python ensures the right packages are available. -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>[YOUR_VENV]/bin/python3</string>
+    <string>[YOUR_SCRIPT]</string>
+  </array>
+
+  <!-- WorkingDirectory: where the script runs from. Affects relative paths in the script. -->
+  <key>WorkingDirectory</key>
+  <string>[YOUR_HOME]</string>
+
+  <!-- StartCalendarInterval: when to run. This example runs daily at [YOUR_HOUR]:[YOUR_MINUTE].
+       If the Mac is asleep at that time, it runs when the Mac wakes up.
+       For more complex schedules, you can add multiple dict entries in an array. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>[YOUR_HOUR]</integer>
+    <key>Minute</key>
+    <integer>[YOUR_MINUTE]</integer>
+  </dict>
+
+  <!-- StandardOutPath: where stdout goes. Check this file to see script output. -->
+  <key>StandardOutPath</key>
+  <string>[YOUR_HOME]/.local/log/daily-digest-stdout.log</string>
+
+  <!-- StandardErrorPath: where stderr goes. Check this file for errors. -->
+  <key>StandardErrorPath</key>
+  <string>[YOUR_HOME]/.local/log/daily-digest-stderr.log</string>
+
+  <!-- EnvironmentVariables: set environment variables for the script.
+       Uncomment and customize if your script needs specific env vars. -->
+  <!--
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>[YOUR_VENV]/bin:/usr/local/bin:/usr/bin:/bin</string>
+    <key>PYTHONPATH</key>
+    <string>[YOUR_HOME]/scripts</string>
+  </dict>
+  -->
+
+  <!-- RunAtLoad: if true, runs immediately when loaded (useful for testing).
+       Set to false for production so it only runs on schedule. -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <!-- ProcessType: Background tells macOS this is a low-priority background task.
+       It will not interfere with foreground app performance. -->
+  <key>ProcessType</key>
+  <string>Background</string>
+
+</dict>
+</plist>
