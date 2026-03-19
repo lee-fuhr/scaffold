@@ -1,6 +1,6 @@
-# ai-ops-starter
+# Scaffold
 
-The starting structure for a Claude Code operating system. Clone it, replace the placeholders, start building.
+Every Claude Code setup post on Reddit reinvents the same scaffolding. This is that scaffolding — the folder structure, hooks, skills, and templates that keep showing up in the systems that actually work.
 
 ---
 
@@ -21,7 +21,7 @@ The structure isn't trivial to get right. Put things in the wrong layer and you'
 ## What's in it
 
 ```
-ai-ops-starter/
+scaffold/
 |
 |-- claude/                       # Claude Code configuration
 |   |-- CLAUDE.md                 # Root instructions (loaded every session)
@@ -61,11 +61,12 @@ ai-ops-starter/
 
 ## Part of the stack
 
-| Repo | Role |
-|------|------|
-| [Build Bible](https://github.com/lee-fuhr/build-bible) | Methodology -- the principles and patterns behind what you're building |
-| [Atlas](https://github.com/lee-fuhr/atlas) | Framework -- the full KCA model this starter kit is organized around |
-| [Memeta](https://github.com/lee-fuhr/memeta) | Memory -- FSRS spaced repetition for persistent cross-session memory |
+| Repo | What it does |
+|------|-------------|
+| **[Build Bible](https://github.com/lee-fuhr/build-bible)** | The engineering methodology — principles, patterns, and failure modes from across the field, synthesized into one living reference. |
+| **[Atlas](https://github.com/lee-fuhr/atlas)** | The architectural model — a structural framework for where every component lives, built from the patterns that hold together at scale. |
+| **[Memeta](https://github.com/lee-fuhr/memeta)** | The memory system — every technique that works for giving AI agents persistent memory, unified and coexisting additively. |
+| **[Scaffold](https://github.com/lee-fuhr/scaffold)** | The starter kit — folder structure, hooks, skills, and templates that production systems converge on, ready to clone. |
 
 This is a seed, not a dependency. Fork it, gut what you don't need, grow it in your direction.
 
