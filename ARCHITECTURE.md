@@ -22,7 +22,7 @@ Three layers. Five sub-layers. Everything in the system fits into one of them.
 ## How this repo maps to the model
 
 ```
-ai-ops-starter/
+scaffold/
 |
 |-- claude/
 |   |-- CLAUDE.md            --> Capability / Machinery

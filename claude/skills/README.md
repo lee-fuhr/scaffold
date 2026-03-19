@@ -78,7 +78,7 @@ These are good skills to build first:
 
 - The Claude Code documentation: https://docs.anthropic.com/en/docs/claude-code
 - Community repositories (search GitHub for "claude code skills")
-- The ai-ops-starter repo you are reading now
+- The scaffold repo you are reading now
 
 ## Tips
 

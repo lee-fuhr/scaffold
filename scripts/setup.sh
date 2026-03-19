@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# setup.sh — Set up the ai-ops-starter directory structure and copy templates.
+# setup.sh — Set up the scaffold directory structure and copy templates.
 #
 # Usage:
 #   bash scripts/setup.sh
@@ -68,7 +68,7 @@ copy_template() {
 # --- Main ---
 
 echo "============================================"
-echo "  ai-ops-starter setup"
+echo "  scaffold setup"
 echo "============================================"
 echo ""
 echo "This will create directories and copy template files."
